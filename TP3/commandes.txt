@@ -1,0 +1,64 @@
+TP3 - SYSTEMD
+
+ATELIER 1
+systemctl --version
+ps aux | head -2
+ps -p 1 -o pid,comm
+whereis systemd
+whereis systemctl
+systemd-analyze
+systemd-analyze blame
+systemd-analyze critical-chain
+
+ATELIER 2
+systemctl get-default
+systemctl list-units --type target
+systemctl set-default multi-user.target
+systemctl get-default
+systemctl set-default graphical.target
+systemctl --failed
+systemctl is-enabled sshd.service
+systemctl status crond.service
+
+ATELIER 3
+systemctl list-unit-files --type=service
+systemctl start sshd.service
+systemctl restart sshd.service
+systemctl stop sshd.service
+systemctl reload sshd.service
+systemctl status sshd.service
+systemctl is-active crond.service
+systemctl enable crond.service
+systemctl disable crond.service
+systemctl mask httpd.service
+systemctl unmask httpd.service
+systemctl kill sshd
+systemctl start sshd.service
+
+ATELIER 4
+journalctl -b
+journalctl -f
+journalctl -u sshd.service
+journalctl -u sshd.service -f
+journalctl -p err
+journalctl -p warning
+journalctl -p info
+journalctl --since "today"
+journalctl --since "14:00"
+journalctl -n 20
+journalctl -u sshd.service -o json
+journalctl -u sshd.service -o json-pretty
+journalctl -u sshd.service -o cat
+journalctl -u sshd.service -o verbose
+
+ATELIER SUPPLEMENTAIRE
+chmod +x /usr/local/bin/custom_service.sh
+systemctl daemon-reload
+systemctl enable custom_service.service
+systemctl start custom_service.service
+systemctl status custom_service.service
+cat /tmp/custom_service_output.txt
+journalctl -u custom_service.service
+
+REMARQUE
+Les commandes non exécutées ne doivent pas être considérées comme des manipulations réalisées.
