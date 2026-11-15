@@ -1,0 +1,421 @@
+    1  cd ~
+    2  mkdir TP_Linux
+    3  ls
+    4  cd TP_Linux
+    5  mkdir docs
+    6  mkdir images
+    7  mkdir scripts
+    8  ls 
+    9  cd docs
+   10  touch resume.txt
+   11  realpath resume.txt
+   12  ls -l 
+   13  cd ~
+   14  ls -la
+   15  cd ..
+   16  ls  -la
+   17  cd TP_Linux
+   18  cd ~
+   19  cd TP_Linux
+   20  cp docs/resume.txt scripts/
+   21  mv scripts/resume.txt images/
+   22  ls images
+   23  rm images/resume.txt
+   24  ls images
+   25  echo "Test du redhat note creation 1 " > docs/notes.txt
+   26  cat docs/notes.txt
+   27  nano docs/notes.txt
+   28  cat docs/notes.txt
+   29  cd ~
+   30  rm -r TP_Linux
+   31  git --version
+   32  sudo dnf install git -y
+   33  cat /etc/redhat-release
+   34  sudo subscription-manager status
+   35  git --version
+   36  sudo dnf install git -y
+   37  git install -y
+   38  sudo dnf install git -y
+   39  cat /etc/redhat-release
+   40  git --version
+   41  sudo subscription-manager status
+   42  sudo subscription-manager identity
+   43  ping -c 4 google.com
+   44  sudo subscription-manager register
+   45  sudo subscription-manager identity
+   46  sudo subscription-manager status
+   47  sudo dnf repolist
+   48  sudo dnf install git -y
+   49  git --version
+   50  ping -c 4 google.com
+   51  sudo subscription-manager register
+   52  git config --global user.name "Fatima Malka"
+   53  git config --global user.email "fatifatimalka@gmail.com"
+   54  git config --global --list
+   55  mkdir -p ~/TP-Administration-Linux
+   56  ls 
+   57  cd ~/TP-Administration-Linux
+   58  pwd
+   59  echo "# TP Administration Linux - RHEL 9 " > README.md
+   60  ls -l
+   61  git init
+   62  git add README.md
+   63  git commit -m "Initialisation du TP Linux "
+   64  git branch -M main
+   65  git remote add origin https://github.com/fati254/TP-Administration-Linux.git
+   66  git remote -v
+   67  tty
+   68  whoami
+   69  echo $SHELL
+   70  echo #HOME
+   71  man ls
+   72  man 1 passwd
+   73  man 5 passwd
+   74  ls --help
+   75  type cd
+   76  type ls
+   77  type pwd
+   78  which cd
+   79  cd /usr/sh
+   80  cd cd /usr/sh
+   81  cd /usr/sh~
+   82  cd /usr/sh
+   83  sys
+   84  history
+   85  nano docs/notes.txt
+   86  date
+   87  cal
+   88  mkdir -p ~/TP_Shell
+   89  [200~mkdir -p ~/TP_Shell~
+   90  mkdir -p ~/TP_Shell
+   91  cd ~/TP_Shell
+   92  ls /etc > etc.txt
+   93  ls /var >> etc.txt
+   94  wc -l etc.txt
+   95  ls /etc /dossier_inexistant > ok.txt 2> erreurs.txt
+   96  ls /etc /dossier_inexistant &> resultat.txt
+   97  ls /etc /dossier_inexistant 2>/dev/null
+   98  head -n 5 /etc/passwd
+   99  less /etc/services
+  100  [200~find /etc -maxdepth 1 -type f -name "*.conf" | wc -l
+  101  head -n 5 /etc/passw\
+  102  ls /etc | wc -l
+  103  find /etc -type f -name "*.conf" -mtime -2
+  104  find ~ -type f -size +1M
+  105  sudo du -sh /var/log/* | sort -h | tail -5
+  106  ps aux | tee processus.txt
+  107  ls -l /etc/passwd /etc/shadow ~
+  108  chmod 755 fichier.txt
+  109  sudo systemctl status sshd
+  110  sudo systemctl is-enabled sshd
+  111  sudo systemctl start sshd
+  112  sudo systemctl enable sshd
+  113  sudo systemctl enable --now sshd
+  114  sudo firewall-cmd --list-services
+  115  sudo firewall-cmd --permanent --add-service=ssh
+  116  sudo firewall-cmd --reload
+  117  ip addr~
+  118  ip addr
+  119  hostname -I
+  120  who
+  121  w
+  122  cd ~/TP-Administration-Linux
+  123  git status
+  124  git remote -v
+  125  git log -1 --online
+  126  git log -1 --oneline
+  127  mkdir -p TP1
+  128  cd TP1
+  129  nano READMEmd
+  130  nano README.md
+  131  cd ~/TP-Administration-Linux
+  132  git status
+  133  git add TP1/
+  134  git commit -m "Ajout du TP1 Linux"
+  135  git push
+  136  git push --set-upstream origin main
+  137  cd ~/TP-Administration-Linux
+  138  git pull origin main --allow-unrelated-histories
+  139  git status
+  140  git pull --no-rebase origin main --allow-unrelated-histories
+  141  git status
+  142  git push --set-upstream origin main
+  143  nano README.md
+  144  git add README.md
+  145  git status
+  146  git commit -m "Resolution du conflit README"
+  147  git push --set-upstream origin main
+  148  history -a
+  149  history -n
+  150  history > TP1/commandes.txt
+  151  nano TP1/commandes.txt
+  152  git add TP1/commandes.txt
+  153  git commit -m "Ajout de l'historique des commandes TP1"
+  154  git push
+  155  mkdir -p TP2
+  156  touch TP2/README.md TP2/commandes.txt
+  157  nano TP2/README.md
+  158  sudo -i
+  159  mount -o remount,rw /sysroot
+  160  sudo i
+  161  sudo -i
+  162  cd ~/TP-Administration-Linux
+  163  mkdir -p TP2
+  164  ls
+  165  cat > TP2/README.md <<'EOF'
+  166  # TP2 - Configuration des paramètres du Boot Loader GRUB2
+  167  ## Objectif
+  168  Comprendre le fonctionnement de GRUB2, découvrir ses fichiers de configuration et apprendre à modifier ses paramètres sous Red Hat Enterprise Linux 9.
+  169  ## Manipulations réalisées
+  170  - Découverte du rôle de GRUB2 dans le démarrage de Linux.
+  171  - Identification du mode de démarrage BIOS ou UEFI.
+  172  - Exploration des fichiers et répertoires de démarrage.
+  173  - Consultation des paramètres GRUB2 et des scripts de configuration.
+  174  - Sauvegarde des fichiers de configuration.
+  175  - Modification des paramètres de démarrage et régénération de grub.cfg.
+  176  - Configuration d'un mot de passe pour protéger l'interface GRUB.
+  177  - Vérification de la création du fichier user.cfg.
+  178  ## Partie non réalisée
+  179  La partie 4 concernant la réinitialisation du mot de passe root n'a pas été réalisée.
+  180  Le test de la protection GRUB au redémarrage n'a pas pu être effectué car le menu GRUB ne s'affiche pas sur la machine virtuelle.
+  181  ## Environnement
+  182  - Système : Red Hat Enterprise Linux 9
+  183  - Machine virtuelle : VMware
+  184  - Chargeur de démarrage : GRUB2
+  185  ## Conclusion
+  186  Ce TP a permis de découvrir le fonctionnement de GRUB2, d'explorer ses fichiers de configuration, de modifier certains paramètres et de mettre en place une protection par mot de passe.
+  187  EOF
+  188  cat > TP2/commandes.txt <<'EOF'
+  189  TP2 - CONFIGURATION GRUB2
+  190  =========================
+  191  PARTIE 1 : DECOUVERTE DE GRUB2
+  192  1. Identifier le mode de démarrage :
+  193  [ -d /sys/firmware/efi ] && echo "Mode UEFI" || echo "Mode BIOS (Legacy)"
+  194  2. Explorer le répertoire /boot :
+  195  ls -l /boot
+  196  3. Explorer les fichiers GRUB :
+  197  ls -l /boot/grub2
+  198  4. Afficher le noyau actuellement utilisé :
+  199  uname -r
+  200  5. Lister les noyaux installés :
+  201  rpm -q kernel-core
+  202  PARTIE 2 : CONFIGURATION GRUB2
+  203  1. Consulter les paramètres :
+  204  cat /etc/default/grub
+  205  2. Lister les scripts GRUB :
+  206  ls -l /etc/grub.d/
+  207  PARTIE 3 : MODIFICATION DE LA CONFIGURATION
+  208  1. Sauvegarder les fichiers :
+  209  cp -p /etc/default/grub /root/grub.default.bak
+  210  cp -p /etc/grub.d/40_custom /root/40_custom.bak
+  211  cp -p /boot/grub2/grub.cfg /root/grub.cfg.bak
+  212  2. Modifier les paramètres dans /etc/default/grub :
+  213  GRUB_TIMEOUT=10
+  214  GRUB_TIMEOUT_STYLE=menu
+  215  GRUB_DEFAULT=1
+  216  3. Ajouter les entrées personnalisées dans /etc/grub.d/40_custom.
+  217  4. Régénérer la configuration :
+  218  grub2-mkconfig -o /boot/grub2/grub.cfg
+  219  PARTIE 4 : REINITIALISATION DU MOT DE PASSE ROOT
+  220  Partie non réalisée.
+  221  PARTIE 5 : PROTECTION DE GRUB PAR MOT DE PASSE
+  222  1. Créer un mot de passe GRUB :
+  223  grub2-setpassword
+  224  2. Régénérer la configuration :
+  225  grub2-mkconfig -o /boot/grub2/grub.cfg
+  226  3. Vérifier l'existence du fichier :
+  227  ls -l /boot/grub2/user.cfg
+  228  IMPORTANT :
+  229  Ne jamais copier le contenu de /boot/grub2/user.cfg dans ce dépôt GitHub.
+  230  EOF
+  231  cat TP2/README.md
+  232  git status
+  233  git add TP2/
+  234  git status
+  235  git commit -m "Ajout du TP2 - Configuration GRUB2"
+  236  git push
+  237  sudo -i
+  238  exit
+  239  EXIT;
+  240  reboot
+  241  cd ~/TP-Administration-Linux
+  242  mkdir -p TP3
+  243  cat > TP3/README.md <<'EOF'
+# TP3 - Configuration des cibles et gestion des services par Systemd
+
+## Objectifs
+- Comprendre le fonctionnement de Systemd.
+- Configurer les cibles Systemd.
+- Gérer les services avec systemctl.
+- Consulter les journaux avec journalctl.
+- Créer un service personnalisé.
+
+## Ateliers
+- Atelier 1 : Bases de Systemd et systemctl.
+- Atelier 2 : Configuration des cibles Systemd.
+- Atelier 3 : Gestion des services.
+- Atelier 4 : Journalisation avec journalctl.
+- Atelier supplémentaire : Création d'un service personnalisé.
+
+## Environnement
+- Red Hat Enterprise Linux 9
+- VMware
+
+## Conclusion
+Ce TP a permis de découvrir Systemd, de gérer les services Linux, de configurer les cibles et de consulter les journaux système.
+EOF
+
+  244  cat > TP3/commandes.txt <<'EOF'
+TP3 - SYSTEMD
+
+ATELIER 1
+systemctl --version
+ps aux | head -2
+ps -p 1 -o pid,comm
+whereis systemd
+whereis systemctl
+systemd-analyze
+systemd-analyze blame
+systemd-analyze critical-chain
+
+ATELIER 2
+systemctl get-default
+systemctl list-units --type target
+systemctl set-default multi-user.target
+systemctl get-default
+systemctl set-default graphical.target
+systemctl --failed
+systemctl is-enabled sshd.service
+systemctl status crond.service
+
+ATELIER 3
+systemctl list-unit-files --type=service
+systemctl start sshd.service
+systemctl restart sshd.service
+systemctl stop sshd.service
+systemctl reload sshd.service
+systemctl status sshd.service
+systemctl is-active crond.service
+systemctl enable crond.service
+systemctl disable crond.service
+systemctl mask httpd.service
+systemctl unmask httpd.service
+systemctl kill sshd
+systemctl start sshd.service
+
+ATELIER 4
+journalctl -b
+journalctl -f
+journalctl -u sshd.service
+journalctl -u sshd.service -f
+journalctl -p err
+journalctl -p warning
+journalctl -p info
+journalctl --since "today"
+journalctl --since "14:00"
+journalctl -n 20
+journalctl -u sshd.service -o json
+journalctl -u sshd.service -o json-pretty
+journalctl -u sshd.service -o cat
+journalctl -u sshd.service -o verbose
+
+ATELIER SUPPLEMENTAIRE
+chmod +x /usr/local/bin/custom_service.sh
+systemctl daemon-reload
+systemctl enable custom_service.service
+systemctl start custom_service.service
+systemctl status custom_service.service
+cat /tmp/custom_service_output.txt
+journalctl -u custom_service.service
+
+REMARQUE
+Les commandes non exécutées ne doivent pas être considérées comme des manipulations réalisées.
+EOF
+
+  245  ls -l TP3
+  246  git add TP3/
+  247  git status
+  248  git commit -m "Ajout du TP3 - Configuration Systemd"
+  249  git push
+  250  cat /etc/redhat-release
+  251  git status
+  252  git branch
+  253  git remote -v
+  254  mkdir -p ~/TP-Administration-Linux/TP4
+  255  cd ~/TP-Administration-Linux/TP4
+  256  touch README.md commandes.txt
+  257  rpm -qa
+  258  rpm -qa | wc -l
+  259  rpm -q binutils
+  260  rpm -qi binutils
+  261  rpm -ql binutils
+  262  rpm -qf /etc/services
+  263  rpm -V nfs-utils
+  264  rpm -V pam
+  265  V
+  266  cd ~/Downloads
+  267  wget https://rpmfind.net/linux/centos-stream/10-stream/BaseOS/x86_64/os/Packages/zsh-5.9-14.el10.x86_64.rpm
+  268  ls -lh zsh-5.9-14.el10.x86_64.rpm
+  269  rpm -qp --configfiles zsh-5.9-14.el10.x86_64.rpm
+  270  rpm -qpR zsh-5.9-14.el10.x86_64.rpm
+  271  rpm --checksig -v zsh-5.9-14.el10.x86_64.rpm
+  272  sudo rpm -ivh --nodeps zsh-5.9-14.el10.x86_64.rpm
+  273  rpm -q zsh
+  274  rpm -ql zsh
+  275  sudo rpm -e zsh
+  276  rpm -q zsh
+  277  rpm -qf /bin/ls
+  278  xdg-open https://rpmfind.net/
+  279  cd ~/Downloads
+  280  ls -lh *.rpm
+  281  sudo rpm -ivh wireshark-*.rpm
+  282  rpm -q dnf
+  283  dnf --version
+  284  sudo dnf install wireshark -y
+  285  rpm -q wireshark
+  286  dnf info wireshark
+  287  sudo dnf check-update
+  288  sudo dnf upgrade
+  289  sudo dnf history
+  290  sudo dnf history info ID
+  291  sudo dnf history undo ID
+  292  rpm -q wireshark
+  293  dnf info zsh
+  294  dnf provides /usr/share/magic
+  295  dnf group list
+  296  dnf group info "System Tools"
+  297  V
+  298  sudo dnf group install "System Tools"
+  299  dnf repolist
+  300  dnf repolist --all
+  301  ls -l /etc/yum.repos.d/
+  302  dnf repolist --all
+  303  sudo grep -nE '^\[|^enabled=|^name=|^baseurl=' /etc/yum.repos.d/*.repo
+  304  sudo dnf config-manager --set-disabled IDENTIFIANT_DU_DEPOT
+  305  dnf repolist
+  306  sudo dnf config-manager --set-enabled IDENTIFIANT_DU_DEPOT
+  307  dnf repolist
+  308  sudo dnf install httpd -y
+  309  sudo dnf install createrepo_c -y
+  310  sudo systemctl enable --now httpd
+  311  sudo systemctl status httpd
+  312  sudo mkdir -p /var/www/html/mon_depot
+  313  ls -ld /var/www/html/mon_depot
+  314  rpm -q wireshark
+  315  sudo dnf remove wireshark -y
+  316  sudo dnf install --downloadonly --downloaddir=/var/www/html/mon_depot wireshark
+  317  ls -lh /var/www/html/mon_depot/
+  318  sudo createrepo_c /var/www/html/mon_depot
+  319  ls -l /var/www/html/mon_depot/repodata/
+  320  sudo nano /etc/yum.repos.d/mon_depot.repo
+  321  cat /etc/yum.repos.d/mon_depot.repo
+  322  sudo dnf repolist
+  323  sudo dnf clean all
+  324  sudo dnf --disablerepo='*' --enablerepo=mon_depot repolist
+  325  sudo dnf --disablerepo='*' --enablerepo=mon_depot install wireshark
+  326  rpm -q wireshark
+  327  sudo dnf history info last
+  328  cd ~/TP-Administration-Linux/TP4
+  329  nano README.md
+  330  history -a
+  331  history > commandes.txt
